@@ -1,3 +1,5 @@
+package Model;
+
 public class Product {
     private String id;
     private String name;
@@ -10,6 +12,7 @@ public class Product {
     private float sumOfSellingPrices;
     private String dateOfManufactoring;
     private String typeOfProductByExpirationDate;
+
 
     public void setId(String id)
     {

@@ -1,3 +1,5 @@
+package Model;
+
 public class Staff {
     private String id;
     private String login;
@@ -9,6 +11,15 @@ public class Staff {
     private String telephoneNumber;
     private String bankDetais;
     private int numberOfHoursWorked;
+    private Role role;
+
+    public String getRole() {
+        return role.toString();
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public String getId() {
         return id;

@@ -1,3 +1,6 @@
+package Model;
+
+import Model.Product;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -15,5 +18,9 @@ public class ShoppingRoom {
 
     public void setListOfProductsInShop(Product product,int number) {
         this.listOfProductsInShop.add(new Pair<>(product,number));
+    }
+
+    public void setListOfProductsInShop(ArrayList<Pair<Product, Integer>> listOfProductsInShop) {
+        this.listOfProductsInShop = listOfProductsInShop;
     }
 }

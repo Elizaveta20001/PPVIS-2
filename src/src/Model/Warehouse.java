@@ -1,7 +1,9 @@
+package Model;
+
+import Model.Product;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Warehouse {
     private ArrayList<Pair<Product,Integer>> listOfProductsInWarehose;
@@ -16,5 +18,9 @@ public class Warehouse {
 
     public void setListOfProductsInWarehose(Product product, int number) {
         this.listOfProductsInWarehose.add(new Pair<>(product,number));
+    }
+
+    public void setListOfProductsInWarehose(ArrayList<Pair<Product, Integer>> listOfProductsInWarehose) {
+        this.listOfProductsInWarehose = listOfProductsInWarehose;
     }
 }

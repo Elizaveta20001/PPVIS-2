@@ -1,3 +1,6 @@
+package Model;
+
+import Model.Product;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -15,5 +18,9 @@ public class Provider {
 
     public void setListOfOfProvider(Product product, int number) {
         this.listOfProductsOfProvider.add(new Pair<>(product,number));
+    }
+
+    public void setListOfProductsOfProvider(ArrayList<Pair<Product, Integer>> listOfProductsOfProvider) {
+        this.listOfProductsOfProvider = listOfProductsOfProvider;
     }
 }
