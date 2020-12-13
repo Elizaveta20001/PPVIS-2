@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Role;
+import Model.Staff;
 import View.*;
 import View.Command.*;
 
@@ -9,8 +11,8 @@ public class Injector {
     private UI ui;
     private ShopImpl shop;
     public Injector(){
-        UI ui = new UI();
-        ShopImpl shop = new ShopImpl();
+        ui = new UI();
+        shop = new ShopImpl();
 
         ServiceManagementEmployee serviceManagementEmployee = new ServiceManagementEmployeeImpl();
         ServiceManagementProducts serviceManagementProducts = new ServiceManagmentProductsImpl();
@@ -20,7 +22,7 @@ public class Injector {
         shop.setServiceManagementProducts(serviceManagementProducts);
         shop.setAuthenticaion(authenticaion);
 
-        ui.setShop(shop);
+
         FrameManagementEmployee frameManagementEmployee = new FrameManagementEmployee();
         FrameManagementProduct frameManagementProduct = new FrameManagementProduct();
         FrameShowNumber frameShowNumber = new FrameShowNumber();
@@ -75,7 +77,22 @@ public class Injector {
         ui.setFrameProduct(frameProduct);
         ui.setFrameShowNumber(frameShowNumber);
         ui.setFrameStaff(frameStaff);
-
+        Staff staff = new Staff();
+        staff.setFirstName("Елизавета");
+        staff.setLastName("Ковель");
+        staff.setPatronymic("Петровна");
+        staff.setId("1");
+        staff.setBankDetais("2222");
+        staff.setLogin("1234");
+        staff.setPassword("1234");
+        staff.setNumberOfHoursWorked(0);
+        staff.setPosition("Генеральный директор");
+        staff.setTelephoneNumber("3568");
+        staff.setRole(Role.administrator);
+        ArrayList<Staff> staffArrayList = new ArrayList<>();
+        staffArrayList.add(staff);
+        shop.setStaff(staffArrayList);
+        ui.setShop(shop);
     }
 
     public ShopImpl getShop() {

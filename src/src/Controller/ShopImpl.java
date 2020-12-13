@@ -52,8 +52,9 @@ public class ShopImpl implements Shop{
     }
 
     @Override
-    public void authentication() {
-
+    public void authentication(String login, String password) {
+        currentStaff = authenticaion.login(login,password,staff);
+        System.out.println(currentStaff.getFirstName());
     }
 
     @Override

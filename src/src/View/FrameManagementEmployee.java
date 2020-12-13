@@ -1,5 +1,7 @@
 package View;
 
+import javax.swing.*;
+
 public class FrameManagementEmployee {
     public void showFrameManagementEmployee()
     {

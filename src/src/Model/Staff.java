@@ -13,8 +13,8 @@ public class Staff {
     private int numberOfHoursWorked;
     private Role role;
 
-    public String getRole() {
-        return role.toString();
+    public Role getRole() {
+        return role;
     }
 
     public void setRole(Role role) {
