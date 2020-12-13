@@ -6,6 +6,8 @@ import View.Command.*;
 import java.util.ArrayList;
 
 public class Injector {
+    private UI ui;
+    private ShopImpl shop;
     public Injector(){
         UI ui = new UI();
         ShopImpl shop = new ShopImpl();
@@ -76,4 +78,11 @@ public class Injector {
 
     }
 
+    public ShopImpl getShop() {
+        return shop;
+    }
+
+    public UI getUi() {
+        return ui;
+    }
 }

@@ -2,6 +2,8 @@ package View;
 
 import Controller.Shop;
 
+import javax.swing.*;
+
 public class UI {
     private Shop shop;
     private FrameStaff frameStaff;
@@ -9,6 +11,18 @@ public class UI {
     private FrameManagementEmployee frameManagementEmployee;
     private FrameManagementProduct frameManagementProduct;
     private FrameShowNumber frameShowNumber;
+    public void showLoginFrame()
+    {
+
+    }
+    public void login()
+    {
+
+    }
+    public void showMainFrame()
+    {
+
+    }
 
     public FrameManagementEmployee getFrameManagementEmployee() {
         return frameManagementEmployee;
