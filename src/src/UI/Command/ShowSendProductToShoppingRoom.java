@@ -1,7 +1,7 @@
 package UI.Command;
 
-public class ShowFrameGetSalary implements CommandStaff {
-    private String name = "Show frame get salary";
+public class ShowSendProductToShoppingRoom implements CommandManagementProduct{
+    private String name = "Show send product to shopping room";
 
     public void setName(String name) {
         this.name = name;

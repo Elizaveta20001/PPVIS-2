@@ -1,7 +1,7 @@
 package UI.Command;
 
-public class GetSalary implements CommandStaff {
-    private String name = "Get Salary";
+public class OrderProduct implements CommandManagementProduct {
+    private String name = "Order product";
 
     public String getName() {
         return name;
