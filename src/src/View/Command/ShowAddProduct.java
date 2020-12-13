@@ -1,7 +1,7 @@
-package UI.Command;
+package View.Command;
 
-public class ShowSendProductToShoppingRoom implements CommandManagementProduct{
-    private String name = "Show send product to shopping room";
+public class ShowAddProduct implements CommandManagementProduct{
+    private String name = "Show add product";
 
     public void setName(String name) {
         this.name = name;

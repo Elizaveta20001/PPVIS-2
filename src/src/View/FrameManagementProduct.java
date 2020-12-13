@@ -1,10 +1,10 @@
-package UI;
+package View;
 
-import UI.Command.CommandManagementProduct;
+import View.Command.CommandManagementProduct;
 
 import java.util.ArrayList;
 
-public class FrameManagementStaff {
+public class FrameManagementProduct {
     private ArrayList<CommandManagementProduct> commandManagementProducts;
 
     public ArrayList<CommandManagementProduct> getCommandManagementProducts() {

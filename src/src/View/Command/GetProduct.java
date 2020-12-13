@@ -1,7 +1,7 @@
-package UI.Command;
+package View.Command;
 
-public class EditProduct implements CommandManagementProduct {
-    private String name = "Edit product";
+public class GetProduct implements CommandManagementProduct {
+    private String name ="Get product";
 
     public String getName() {
         return name;

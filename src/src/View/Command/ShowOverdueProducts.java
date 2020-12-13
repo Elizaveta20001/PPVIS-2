@@ -1,4 +1,4 @@
-package UI.Command;
+package View.Command;
 
 public class ShowOverdueProducts implements CommandProducts{
     private String name = "Show overdue products";

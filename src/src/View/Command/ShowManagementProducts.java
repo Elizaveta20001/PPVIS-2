@@ -1,4 +1,4 @@
-package UI.Command;
+package View.Command;
 
 public class ShowManagementProducts implements CommandManagementProduct {
     private String name = "Show management products";

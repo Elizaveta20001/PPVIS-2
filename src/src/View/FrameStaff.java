@@ -1,6 +1,6 @@
-package UI;
+package View;
 
-import UI.Command.CommandStaff;
+import View.Command.CommandStaff;
 
 import java.util.ArrayList;
 
