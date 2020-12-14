@@ -2,5 +2,10 @@ package Model;
 
 public enum Role {
     administrator,
-    manager
+    manager;
+
+    private String role;
+
+
+
 }

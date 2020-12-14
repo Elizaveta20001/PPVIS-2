@@ -14,27 +14,28 @@ public class UI {
     private FrameManagementEmployee frameManagementEmployee;
     private FrameManagementProduct frameManagementProduct;
     private FrameShowNumber frameShowNumber;
-    public JFrame jframe;
     public void showLoginFrame()
     {
-        jframe = new JFrame();
+        JFrame jframe = new JFrame();
         jframe.setSize(1000,500);
         JPanel jpanel = new JPanel();
         jpanel.setLayout(new BoxLayout(jpanel,BoxLayout.LINE_AXIS));
         JLabel jlabel = new JLabel();
-        jlabel.setText("Логин");
+        jlabel.setText("Login");
         JTextField jTextField = new JTextField();
         jTextField.setMaximumSize(new Dimension(400,50));
         JLabel jlabelPassword = new JLabel();
-        jlabelPassword.setText("Пароль");
+        jlabelPassword.setText("Password");
         JTextField jTextField1 = new JTextField();
         jTextField1.setMaximumSize(new Dimension(400,50));
         JButton jButton = new JButton();
         jButton.setMaximumSize(new Dimension(400,50));
-        jButton.setText("Войти");
+        jButton.setText("Log in");
         jButton.addActionListener(actionEvent ->
         {
+
             login(jTextField.getText(),jTextField1.getText());
+            jframe.dispose();
         });
         jpanel.add(jlabel);
         jpanel.add(jTextField);
@@ -46,22 +47,50 @@ public class UI {
     }
     public void login(String login, String password)
     {
-        shop.authentication(login, password);
+        shop.authentication(login, password,shop.getServiceManagementEmployee().getStaffArrayList());
         showMainFrame();
     }
     public void showMainFrame()
     {
         if(Role.administrator == shop.getCurrentStaff().getRole())
         {
-            jframe.dispose();
-            jframe.removeAll();
-            jframe.setSize(1000,500);
-            JPanel jpanel = new JPanel();
-            jpanel.setLayout(new BoxLayout(jpanel,BoxLayout.Y_AXIS));
-            jframe.setVisible(true);
+            JFrame frame = new JFrame();
+            frame.setSize(1000,500);
+            JPanel jpanel1 = new JPanel();
+            jpanel1.setLayout(new BoxLayout(jpanel1,BoxLayout.X_AXIS));
+            JButton buttonFrameManagmentEmployee = new JButton();
+            buttonFrameManagmentEmployee.setText("Staff management");
+            buttonFrameManagmentEmployee.setSize(400,50);
+            buttonFrameManagmentEmployee.addActionListener(actionEvent ->
+            {
+
+                frameManagementEmployee.showFrameManagementEmployee();
+            });
+            JButton buttonShowInformation = new JButton();
+            buttonShowInformation.setText("Show information");
+            buttonShowInformation.setSize(400,50);
+            buttonShowInformation.addActionListener(actionEvent -> {
+
+                frameStaff.buttonIsPressed(buttonShowInformation.getText());
+            });
+            JButton buttonShowGetSalary = new JButton();
+            buttonShowGetSalary.setText("Show get salary");
+            buttonShowGetSalary.setSize(400,50);
+            buttonShowGetSalary.addActionListener(actionEvent -> {
+                frameStaff.buttonIsPressed(buttonShowGetSalary.getText());
+            });
+
+
+            jpanel1.add(buttonFrameManagmentEmployee);
+            jpanel1.add(buttonShowInformation);
+            jpanel1.add(buttonShowGetSalary);
+            frame.add(jpanel1);
+            frame.setVisible(true);
+
         }
         else if(Role.manager == shop.getCurrentStaff().getRole())
         {
+
 
         }
     }

@@ -12,6 +12,17 @@ public class Staff {
     private String bankDetais;
     private int numberOfHoursWorked;
     private Role role;
+    public Staff(String login, String password,String firstName,String lastName,String patronymic,String position,String telephoneNumber,String bankDetais)
+    {
+        this.login = login;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.position = position;
+        this.telephoneNumber = telephoneNumber;
+        this.bankDetais = bankDetais;
+    }
 
     public Role getRole() {
         return role;

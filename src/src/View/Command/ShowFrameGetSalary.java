@@ -1,5 +1,7 @@
 package View.Command;
 
+import javax.swing.*;
+
 public class ShowFrameGetSalary implements CommandStaff {
     private String name = "Show frame get salary";
 

@@ -16,6 +16,12 @@ public class FrameStaff {
     }
     public void buttonIsPressed(String name)
     {
-
+        for(CommandStaff commandStaff:commandStaffs)
+        {
+            if(name.equals(commandStaff.getName()))
+            {
+                commandStaff.execute();
+            }
+        }
     }
 }

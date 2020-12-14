@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Product;
 import Model.Role;
 import Model.Staff;
 import View.*;
@@ -14,9 +15,18 @@ public class Injector {
         ui = new UI();
         shop = new ShopImpl();
 
-        ServiceManagementEmployee serviceManagementEmployee = new ServiceManagementEmployeeImpl();
+        ServiceManagementEmployeeImpl serviceManagementEmployee = new ServiceManagementEmployeeImpl();
         ServiceManagementProducts serviceManagementProducts = new ServiceManagmentProductsImpl();
         Authenticaion authenticaion = new AuthenticationImpl();
+
+        Staff staff = new Staff("1234","1234","Елизавета","Ковель","Петровна","Генеральный директор","3568","2222");
+        Staff staff1 = new Staff("123","123","Олег","Манкевич","Александрович","Генеральный директор","3568","2222");
+        staff.setRole(Role.administrator);
+        staff1.setRole(Role.manager);
+        ArrayList<Staff> staffArrayList = new ArrayList<>();
+        staffArrayList.add(staff);
+        staffArrayList.add(staff1);
+        serviceManagementEmployee.setStaffArrayList(staffArrayList);
 
         shop.setServiceManagementEmployee(serviceManagementEmployee);
         shop.setServiceManagementProducts(serviceManagementProducts);
@@ -24,6 +34,7 @@ public class Injector {
 
 
         FrameManagementEmployee frameManagementEmployee = new FrameManagementEmployee();
+        frameManagementEmployee.setShop(shop);
         FrameManagementProduct frameManagementProduct = new FrameManagementProduct();
         FrameShowNumber frameShowNumber = new FrameShowNumber();
         FrameProduct frameProduct = new FrameProduct();
@@ -40,6 +51,7 @@ public class Injector {
         ShowFrameGetSalary showFrameGetSalary = new ShowFrameGetSalary();
         ShowGetProduct showGetProduct = new ShowGetProduct();
         ShowInformation showInformation = new ShowInformation();
+        showInformation.setShop(shop);
         ShowManagementProducts showManagementProducts = new ShowManagementProducts();
         ShowOrderProduct showOrderProduct = new ShowOrderProduct();
         ShowOverdueProducts showOverdueProducts = new ShowOverdueProducts();
@@ -77,21 +89,8 @@ public class Injector {
         ui.setFrameProduct(frameProduct);
         ui.setFrameShowNumber(frameShowNumber);
         ui.setFrameStaff(frameStaff);
-        Staff staff = new Staff();
-        staff.setFirstName("Елизавета");
-        staff.setLastName("Ковель");
-        staff.setPatronymic("Петровна");
-        staff.setId("1");
-        staff.setBankDetais("2222");
-        staff.setLogin("1234");
-        staff.setPassword("1234");
-        staff.setNumberOfHoursWorked(0);
-        staff.setPosition("Генеральный директор");
-        staff.setTelephoneNumber("3568");
-        staff.setRole(Role.administrator);
-        ArrayList<Staff> staffArrayList = new ArrayList<>();
-        staffArrayList.add(staff);
-        shop.setStaff(staffArrayList);
+
+        //shop.setStaff(staffArrayList);
         ui.setShop(shop);
     }
 
