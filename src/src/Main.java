@@ -1,7 +1,4 @@
-import Controller.Injector;
-import View.UI;
-import java.sql.*;
-import javax.swing.*;
+import Services.Injector;
 
 public class Main {
     public void start()
