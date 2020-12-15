@@ -134,7 +134,7 @@ public class FrameManagementEmployee {
                     temp = radioButton;
                 }
             }
-            if(textFieldName.equals("") || textFieldLastName.equals("") || textFieldPatronymic.equals("") || textFieldPosition.equals("") || textFieldTelephoneNumber.equals("") || textFieldBankDetails.equals(""))
+            if(textFieldName.getText().equals("") || textFieldLastName.getText().equals("") || textFieldPatronymic.getText().equals("") || textFieldPosition.getText().equals("") || textFieldTelephoneNumber.getText().equals("") || textFieldBankDetails.getText().equals(""))
             {
                 System.out.println("Ошибка");
             }
@@ -350,10 +350,6 @@ public class FrameManagementEmployee {
         jframe.add(jPanel);
         jframe.setVisible(true);
     }
-    public void vacation()
-    {
-        ///лишняя
-    }
 
     public  void editStaff(Staff staff)
     {
@@ -411,7 +407,7 @@ public class FrameManagementEmployee {
         button.addActionListener(actionEvent ->
         {
             jframe.dispose();
-            if(textFieldName.equals("") || textFieldLastName.equals("") || textFieldPatronymic.equals("") || textFieldPosition.equals("") || textFieldTelephoneNumber.equals("") || textFieldBankDetails.equals("") || textFieldHours.equals(""))
+            if(textFieldName.getText().equals("") || textFieldLastName.getText().equals("") || textFieldPatronymic.getText().equals("") || textFieldPosition.getText().equals("") || textFieldTelephoneNumber.getText().equals("") || textFieldBankDetails.getText().equals("") || textFieldHours.getText().equals(""))
             {
                 System.out.println("Ошибка");
             }

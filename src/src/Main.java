@@ -4,10 +4,15 @@ import java.sql.*;
 import javax.swing.*;
 
 public class Main {
+    public void start()
+    {
+        Injector injector = new Injector();
+        injector.start();
+    }
 
     public static void main(String[] args) {
-        Injector injector = new Injector();
-        injector.getUi().showLoginFrame();
+        Main main = new Main();
+        main.start();
     }
 }
 

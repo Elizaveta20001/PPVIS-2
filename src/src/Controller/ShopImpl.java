@@ -5,8 +5,8 @@ import Model.Staff;
 import java.util.ArrayList;
 
 public class ShopImpl implements Shop{
-    //private ArrayList<Staff> staff;
-    private ServiceManagementProducts serviceManagementProducts;
+
+    private ServiceManagmentProductsImpl serviceManagementProducts;
     private ServiceManagementEmployeeImpl serviceManagementEmployee;
     private Authenticaion authenticaion;
     private Staff currentStaff;
@@ -18,11 +18,6 @@ public class ShopImpl implements Shop{
     public void setAuthenticaion(Authenticaion authenticaion) {
         this.authenticaion = authenticaion;
     }
-    /*
-    public ArrayList<Staff> getStaff() {
-        return staff;
-    }
-     */
 
 
 
@@ -30,7 +25,7 @@ public class ShopImpl implements Shop{
         return serviceManagementEmployee;
     }
 
-    public ServiceManagementProducts getServiceManagementProducts() {
+    public ServiceManagmentProductsImpl getServiceManagementProducts() {
         return serviceManagementProducts;
     }
 
@@ -46,14 +41,10 @@ public class ShopImpl implements Shop{
         this.serviceManagementEmployee = serviceManagementEmployee;
     }
 
-    public void setServiceManagementProducts(ServiceManagementProducts serviceManagementProducts) {
+    public void setServiceManagementProducts(ServiceManagmentProductsImpl serviceManagementProducts) {
         this.serviceManagementProducts = serviceManagementProducts;
     }
-    /*
-    public void setStaff(ArrayList<Staff> staff) {
-        this.staff = staff;
-    }
-*/
+
 
 
     @Override

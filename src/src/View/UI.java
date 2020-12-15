@@ -74,7 +74,7 @@ public class UI {
                 frameStaff.buttonIsPressed(buttonShowInformation.getText());
             });
             JButton buttonShowGetSalary = new JButton();
-            buttonShowGetSalary.setText("Show get salary");
+            buttonShowGetSalary.setText("Show frame get salary");
             buttonShowGetSalary.setSize(400,50);
             buttonShowGetSalary.addActionListener(actionEvent -> {
                 frameStaff.buttonIsPressed(buttonShowGetSalary.getText());
@@ -90,7 +90,39 @@ public class UI {
         }
         else if(Role.manager == shop.getCurrentStaff().getRole())
         {
+            JFrame frame = new JFrame();
+            frame.setSize(1000,500);
+            JPanel jpanel1 = new JPanel();
+            jpanel1.setLayout(new BoxLayout(jpanel1,BoxLayout.X_AXIS));
+            JButton buttonFrameManagmentProduct= new JButton();
+            buttonFrameManagmentProduct.setText("Show number of products");
+            buttonFrameManagmentProduct.setSize(1000,50);
+            buttonFrameManagmentProduct.addActionListener(actionEvent ->
+            {
 
+                frameShowNumber.showNumber();
+
+            });
+            JButton buttonShowOverdueProduct = new JButton();
+            buttonShowOverdueProduct.setText("Show overdue products");
+            buttonShowOverdueProduct.setSize(1000,50);
+            buttonShowOverdueProduct.addActionListener(actionEvent -> {
+
+                frameProduct.buttonIsPressed(buttonShowOverdueProduct.getText());
+            });
+            JButton buttonManagementProduct = new JButton();
+            buttonManagementProduct.setText("Show management products");
+            buttonManagementProduct.setSize(1000,50);
+            buttonManagementProduct.addActionListener(actionEvent -> {
+                frameManagementProduct.buttonIsPressed(buttonManagementProduct.getText());
+            });
+
+
+            jpanel1.add(buttonManagementProduct);
+            jpanel1.add(buttonShowOverdueProduct);
+            jpanel1.add(buttonFrameManagmentProduct);
+            frame.add(jpanel1);
+            frame.setVisible(true);
 
         }
     }

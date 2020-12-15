@@ -9,7 +9,35 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 public class ServiceManagmentProductsImpl implements ServiceManagementProducts {
-        @Override
+        private Warehouse warehouse;
+        private ShoppingRoom shoppingRoom;
+        private ArrayList<Provider> provider;
+
+    public ArrayList<Provider> getProvider() {
+        return provider;
+    }
+
+    public ShoppingRoom getShoppingRoom() {
+        return shoppingRoom;
+    }
+
+    public void setProvider(ArrayList<Provider> provider) {
+        this.provider = provider;
+    }
+
+    public void setShoppingRoom(ShoppingRoom shoppingRoom) {
+        this.shoppingRoom = shoppingRoom;
+    }
+
+    public void setWarehouse(Warehouse warehouse) {
+        this.warehouse = warehouse;
+    }
+
+    public Warehouse getWarehouse() {
+        return warehouse;
+    }
+
+    @Override
         public ArrayList<Pair<Product,Integer>> showNumberOfProductsInWarehouse(Warehouse warehouse) {
            return warehouse.getListOfProductsInWarehose();
         }
@@ -65,50 +93,16 @@ public class ServiceManagmentProductsImpl implements ServiceManagementProducts {
 
     @Override
     public void getProductFromProvider(Product product, int number, Provider provider) {
-            ArrayList<Pair<Product,Integer>> tempArray;
-            tempArray = provider.getListOfProductsOfProvider();
-            for(Pair<Product,Integer> pair: tempArray)
-            {
-                if(pair.getKey().equals(product))
-                {
-                    if(pair.getValue() > number)
-                    {
-                        /////
-                    }
-                    else
-                    {
-                        tempArray.remove(pair);
-                    }
-                }
-            }
-            provider.setListOfProductsOfProvider(tempArray);
+
     }
 
     @Override
     public void soldProduct(Product product, int number, ShoppingRoom shoppingRoom) {
-        ArrayList<Pair<Product,Integer>> tempArray;
-        tempArray = shoppingRoom.getListOfProductsInShop();
-        for(Pair<Product,Integer> pair: tempArray)
-        {
-            if(pair.getKey().equals(product))
-            {
-                if(pair.getValue() > number)
-                {
-                    /////
-                }
-                else
-                {
-                    tempArray.remove(pair);
-                }
-            }
-        }
-        shoppingRoom.setListOfProductsInShop(tempArray);
+
     }
 
     @Override
     public ArrayList<Product> showOverdueProducts(ShoppingRoom shoppingRoom, Warehouse warehouse) {
-        ArrayList<Product> productArrayList = new ArrayList<>();
-        /////
         return null;
     }
 }

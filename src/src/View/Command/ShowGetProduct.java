@@ -1,6 +1,12 @@
 package View.Command;
 
+import Controller.ShopImpl;
+import Model.Staff;
+
+import javax.swing.*;
+
 public class ShowGetProduct implements CommandManagementProduct {
+
     private String name ="Show get product";
 
     public void setName(String name) {
@@ -13,6 +19,5 @@ public class ShowGetProduct implements CommandManagementProduct {
 
     @Override
     public void execute() {
-
     }
 }

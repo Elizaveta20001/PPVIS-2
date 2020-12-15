@@ -13,6 +13,6 @@ public class ShowSendProductToShoppingRoom implements CommandManagementProduct{
 
     @Override
     public void execute() {
-
+        //ЛИШНИЙ
     }
 }

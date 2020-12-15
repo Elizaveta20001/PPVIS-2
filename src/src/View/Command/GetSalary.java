@@ -13,6 +13,6 @@ public class GetSalary implements CommandStaff {
 
     @Override
     public void execute() {
-
+        //лишний
     }
 }
